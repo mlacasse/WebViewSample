@@ -2,8 +2,7 @@
  * Basic You.i RN app
  */
 import React, { Component } from "react";
-import { AppRegistry, Image, StyleSheet, View } from "react-native";
-import { Composition, FormFactor, WebViewRef } from "@youi/react-native-youi";
+import { AppRegistry, Image, StyleSheet, WebView, View } from "react-native";
 
 export default class YiReactApp extends Component {
   render() {
@@ -28,15 +27,13 @@ export default class YiReactApp extends Component {
           style={styles.bodyContainer}
           focusable={true}
           accessible={true}
-          accessibilityLabel="WebViewRef"
-          accessibilityHint="WebViewRef in your first app"
+          accessibilityLabel="WebView"
+          accessibilityHint="WebView in your first app"
         >
-          <Composition source = "WebViewRefProps_MainComp">
-              <WebViewRef
-                name="SourceTest" 
-                source={{uri: 'https://dfwtandc.secure.footprint.net/termsAndConditions/html/bbtv/regular/version_8.0_terms.html'}} 
-              />
-            </Composition>
+          <WebView
+            name="SourceTest" 
+            source={{uri: 'https://dfwtandc.secure.footprint.net/termsAndConditions/html/bbtv/regular/version_8.0_terms.html'}} 
+          />
         </View>
       </View>
     );
@@ -60,14 +57,14 @@ const styles = StyleSheet.create({
     flex: 1
   },
   image: {
-    height: FormFactor.isTV ? 225 : 75,
-    width: FormFactor.isTV ? 225 : 75,
+    height: 25,
+    width: 25,
     resizeMode: "contain"
   },
   bodyContainer: {
     alignItems: "center",
     justifyContent: "center",
-    flex: 2
+    flex: 5
   },
 });
 
